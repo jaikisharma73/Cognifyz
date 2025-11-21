@@ -192,6 +192,12 @@ form{
        height: 90vh;
       
  }
+ .social-icons{
+    visibility: hidden;
+ }
+.social-icon{
+    display: none;
+}
  .container .ragis{
     visibility: hidden;
  }
