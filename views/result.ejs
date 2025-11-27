@@ -2,33 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Result</title>
+    <title>Submission Result</title>
     <link rel="stylesheet" href="/result.css">
 </head>
 <body>
-    <div class="container">
-  <div class="header">
-    <div class="h-badge"></div>
-    <h2>Form Submitted Successfully!</h2>
-  </div>
 
-  <div class="card">
-    <h3>User Details</h3>
-    <div class="row"><strong>Name:</strong> <span><%= user.name %></span></div>
-    <div class="row"><strong>Email:</strong> <span><%= user.email %></span></div>
-    <div class="row"><strong>Password:</strong> <span><%= user.password %></span></div>
-    <hr>
-    <a class="back" href="/">Go Back</a>
-  </div>
+<div class="container">
+    <div class="header">
+        <div class="h-badge"></div>
+        <h2>🎉 Form Submitted Successfully!</h2>
+    </div>
+    <div class="card">
+        <h3>Submitted User Details</h3>
 
-  <div class="card">
-    <h3>All Users (Temporary Storage)</h3>
-    <ul class="users">
-      <% users.forEach(u => { %>
-        <li><strong><%= u.name %></strong> <small> — <%= u.email %> — <%= u.password %></small></li>
-      <% }) %>
-    </ul>
-  </div>
+        <div class="row">
+            <strong>Name:</strong> 
+            <span><%= user.name %></span>
+        </div>
+
+        <div class="row">
+            <strong>Email:</strong> 
+            <span><%= user.email %></span>
+        </div>
+
+        <div class="row">
+            <strong>Password:</strong> 
+            <span>•••••••</span>
+        </div>
+
+        <hr>
+
+        <a class="back" href="/">⬅ Go Back</a>
+    </div>
+    <div class="card">
+        <h3>All Users (Stored on Server)</h3>
+        <ul class="users">
+            <% users.forEach(u => { %>
+                <li>
+                    <strong><%= u.name %></strong>
+                    <small>— <%= u.email %></small>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+    <div class="card">
+        <h3>Users Loaded from API</h3>
+        <ul id="userList" class="users">
+        </ul>
+    </div>
+
 </div>
+
+<script src="/app.js"></script>
+
 </body>
 </html>
